@@ -1,5 +1,4 @@
 // Define Global Variables
-
 let navUl = document.getElementById("navbar__list");
 
 let sections = document.getElementsByTagName("section");
@@ -11,7 +10,6 @@ let nv = document.querySelector(".navbar__menu");
 let bu = document.querySelector("#nav-drawer");
 
 // build the nav
-
 for (let sec of sections) {
   dtNavValue += ` ${sec.getAttribute("data-nav")}`;
 
@@ -34,9 +32,8 @@ for (var navLink of navLinks) {
   navLink.textContent = dtNavArray[n + 1];
 
   // Scroll to section on link click
-
+  
   //navLink.href='#'+dtNavArray[n+1];
-
   navLink.addEventListener("click", function () {
     let div = document.getElementById(`${this.textContent}`);
 
@@ -58,7 +55,7 @@ show();
   n++;
 }
 
-// Build menu animation
+/* --- Build Navigation Menu --- */
 bu.addEventListener("click", show);
 function show() {
 if (nv.style.display == "block") {
