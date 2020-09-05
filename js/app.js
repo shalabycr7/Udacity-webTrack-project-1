@@ -68,7 +68,7 @@ if (nv.style.display == "block") {
      
 } else {
      nv.style.display = "block"; 
-     bu.style.color='black';
+     bu.style.color='#333';
      bu.style.transform='rotate(90deg)'
 }
 }
