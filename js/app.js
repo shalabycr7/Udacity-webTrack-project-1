@@ -50,28 +50,27 @@ for (var navLink of navLinks) {
 
     div.classList.add("your-active-class");
 
+show();
     // Scroll to anchor ID using scrollTO event
-   //nv.style.display = "none";
-   show();
-
     div.scrollIntoView();
   });
 
   n++;
 }
 
+// Build menu animation
 bu.addEventListener("click", show);
-
 function show() {
 if (nv.style.display == "block") {
      nv.style.display = "none";
      bu.style.color='white';
+     bu.style.transform='rotate(0deg)'
      
 } else {
-     nv.style.display = "block";
+     nv.style.display = "block"; 
      bu.style.color='black';
+     bu.style.transform='rotate(90deg)'
 }
-
 }
 /**
 
@@ -82,5 +81,3 @@ if (nv.style.display == "block") {
  * 
 
  */
-
-// Build menu

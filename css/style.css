@@ -138,24 +138,22 @@ section {
 }
 .navbar__menu {
   display: none;
+  animation: fadeInLeft;
+  animation-duration: 240ms;
 }
+
 #nav-drawer {
  padding: 10px;
-
   position: fixed;
-
   top: 10px;
-
   right: 15px;
   
-
-  border: 1px solid blue;
-
   z-index: 99;
   display: grid;
   place-items: center;
   font-size: 2em;
-  overflow: hidden;
+  opacity: .7;
+  transition: transform 250ms;
 }
 
 /* Footer Styles */
