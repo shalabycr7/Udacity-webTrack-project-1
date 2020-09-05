@@ -69,11 +69,7 @@ if (nv.style.display == "block") {
    
      nv.style.display = "block"; 
      bu.style.top='55px';
-     
      bu.style.transform='rotate(90deg)'
-     
-    // bu.style.border='1px solid black';
-     
 }
 }
 /**
@@ -85,4 +81,3 @@ if (nv.style.display == "block") {
  * 
 
  */
-console.log(navUl.outerHTML)
