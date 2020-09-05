@@ -13,11 +13,11 @@ let bu = document.querySelector("#nav-drawer");
 for (let sec of sections) {
   dtNavValue += ` ${sec.getAttribute("data-nav")}`;
 
-  var createdLiElements = document.createElement("li");
+  let createdLiElements = document.createElement("li");
 
-  var link = document.createElement("a");
+  let link = document.createElement("a");
 
-  createdLiElements.classList.add("menu__link");
+  link.classList.add("menu__link");
 
   createdLiElements.appendChild(link);
 
@@ -59,16 +59,21 @@ show();
 bu.addEventListener("click", show);
 function show() {
 if (nv.style.display == "block") {
+   bu.style.top='10px';
      nv.style.display = "none";
      bu.style.color='white';
      bu.style.transform='rotate(0deg)'
       bu.style.border='1px solid white';
      
 } else {
+   
      nv.style.display = "block"; 
-     bu.style.color='#333';
+     bu.style.top='55px';
+     
      bu.style.transform='rotate(90deg)'
-     bu.style.border='none';
+     
+    // bu.style.border='1px solid black';
+     
 }
 }
 /**
@@ -80,3 +85,4 @@ if (nv.style.display == "block") {
  * 
 
  */
+console.log(navUl.outerHTML)
