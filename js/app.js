@@ -51,7 +51,8 @@ for (var navLink of navLinks) {
     div.classList.add("your-active-class");
 
     // Scroll to anchor ID using scrollTO event
-    nv.style.display = "none";
+   //nv.style.display = "none";
+   show();
 
     div.scrollIntoView();
   });
@@ -62,7 +63,15 @@ for (var navLink of navLinks) {
 bu.addEventListener("click", show);
 
 function show() {
-  nv.style.display = "block";
+if (nv.style.display == "block") {
+     nv.style.display = "none";
+     bu.style.color='white';
+     
+} else {
+     nv.style.display = "block";
+     bu.style.color='black';
+}
+
 }
 /**
 
