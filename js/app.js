@@ -52,7 +52,7 @@ for (var navLink of navLinks) {
 
 show();
     // Scroll to anchor ID using scrollTO event
-    div.scrollIntoView();
+    div.scrollIntoView({behavior: 'smooth'});
   });
 
   n++;
@@ -65,11 +65,13 @@ if (nv.style.display == "block") {
      nv.style.display = "none";
      bu.style.color='white';
      bu.style.transform='rotate(0deg)'
+      bu.style.border='1px solid white';
      
 } else {
      nv.style.display = "block"; 
      bu.style.color='#333';
      bu.style.transform='rotate(90deg)'
+     bu.style.border='none';
 }
 }
 /**
