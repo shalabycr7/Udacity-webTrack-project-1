@@ -67,7 +67,7 @@ section {
   color: #fff;
   transition: ease 0.3s all;
 }
-
+.menu__link:first-letter { text-transform:capitalize; }
 /* Header Styles */
 .page__header {
   background: #fff;
