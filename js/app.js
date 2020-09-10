@@ -64,12 +64,14 @@ if (nv.style.display == "block") {
      bu.style.color='white';
      bu.style.transform='rotate(0deg)'
       bu.style.border='1px solid white';
+      bu.style.opacity='0.9';
      
 } else {
    
      nv.style.display = "block"; 
      bu.style.top='55px';
      bu.style.transform='rotate(90deg)'
+     bu.style.opacity='0.72';  
 }
 }
 /**

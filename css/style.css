@@ -93,7 +93,7 @@ section {
   place-items: center;
   font-size: 2em;
   opacity: .9;
-  transition: transform 250ms;
+  transition: transform 250ms,top 200ms ease-out;
   color: white;
   margin-left:10px;
   
