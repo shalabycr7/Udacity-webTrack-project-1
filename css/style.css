@@ -61,6 +61,7 @@ section {
   font-weight: bold;
   text-decoration: none;
   color: #000;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .navbar__menu .menu__link:hover {
   background: #333;
