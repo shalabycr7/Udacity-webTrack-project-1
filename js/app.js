@@ -61,11 +61,9 @@ bu.addEventListener("click", show);
 function show() {
    
   if (nv.style.display == "block") {
-    bu.style.top = "10px";
+   bu.style.top = "10px";
     nv.style.display = "none";
-    bu.style.color = "white";
     bu.style.transform = "rotate(0deg)";
-    bu.style.border = "1px solid white";
     bu.style.opacity = "0.95";
     
   } else {
