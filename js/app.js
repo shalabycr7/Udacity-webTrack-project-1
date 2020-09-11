@@ -32,8 +32,8 @@ for (var navLink of navLinks) {
   navLink.textContent = dtNavArray[n + 1];
 
   // Scroll to section on link click
-  
-  //navLink.href='#'+dtNavArray[n+1];
+
+  navLink.href = "#" + dtNavArray[n + 1];
   navLink.addEventListener("click", function () {
     let div = document.getElementById(`${this.textContent}`);
 
@@ -47,9 +47,9 @@ for (var navLink of navLinks) {
 
     div.classList.add("your-active-class");
 
-show();
+    // show();
     // Scroll to anchor ID using scrollTO event
-    div.scrollIntoView({behavior: 'smooth'});
+    div.scrollIntoView({ behavior: "smooth" });
   });
 
   n++;
@@ -58,21 +58,19 @@ show();
 /* --- Build Navigation Menu --- */
 bu.addEventListener("click", show);
 function show() {
-if (nv.style.display == "block") {
-   bu.style.top='10px';
-     nv.style.display = "none";
-     bu.style.color='white';
-     bu.style.transform='rotate(0deg)'
-      bu.style.border='1px solid white';
-      bu.style.opacity='0.9';
-     
-} else {
-   
-     nv.style.display = "block"; 
-     bu.style.top='55px';
-     bu.style.transform='rotate(90deg)'
-     bu.style.opacity='0.72';  
-}
+  if (nv.style.display == "block") {
+    bu.style.top = "10px";
+    nv.style.display = "none";
+    bu.style.color = "white";
+    bu.style.transform = "rotate(0deg)";
+    bu.style.border = "1px solid white";
+    bu.style.opacity = "0.9";
+  } else {
+    nv.style.display = "block";
+    bu.style.top = "55px";
+    bu.style.transform = "rotate(90deg)";
+    bu.style.opacity = "0.72";
+  }
 }
 /**
 

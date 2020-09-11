@@ -50,7 +50,6 @@ section {
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  
 }
 .navbar__menu li {
   display: inline-block;
@@ -63,12 +62,20 @@ section {
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .navbar__menu .menu__link:hover {
   background: #333;
   color: #fff;
   transition: ease 0.3s all;
 }
-.menu__link:first-letter { text-transform:capitalize; }
+.navbar__menu .menu__link:active {
+  color: blue;
+  transition: ease 0.3s all;
+}
+
+.menu__link:first-letter {
+  text-transform: capitalize;
+}
 /* Header Styles */
 .page__header {
   background: #fff;
@@ -83,21 +90,20 @@ section {
   animation-duration: 240ms;
 }
 #nav-drawer {
- padding: 8px;
+  padding: 8px;
   position: fixed;
   top: 10px;
   right: 10px;
   border: 1px solid white;
-  border-radius:10px;
+  border-radius: 10px;
   z-index: 99;
   display: grid;
   place-items: center;
   font-size: 2em;
-  opacity: .9;
-  transition: transform 250ms,top 200ms ease-out;
+  opacity: 0.9;
+  transition: transform 250ms, top 200ms ease-out;
   color: white;
-  margin-left:10px;
-  
+  margin-left: 10px;
 }
 
 /* Footer Styles */
@@ -234,5 +240,14 @@ section.your-active-class .landing__container::after {
   h1 {
     font-size: 7em;
     margin: 2em 4rem 1em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar__menu li {
+    display: block;
+  }
+  #nav-drawer {
+    font-size: 1.8em;
   }
 }
