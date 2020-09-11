@@ -75,24 +75,14 @@ function show() {
     bu.style.opacity = "0.85";
   }
 }
-
+/* -- Add go-to top button at the end of the page -- */
 window.onscroll = function(ev) {
-    topButton.style.display='none';
+    topButton.style.opacity=0;
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
    // you're at the bottom of the page 
-      topButton.style.display='block';
-      topButton.addEventListener('click',function(){
+      topButton.style.opacity=1;
+      topButton.addEventListener('click',()=>{
          scrollTo({top:0,left:0,behavior:'smooth'});
-      })
+})
 }
-};
-
-/**
-
- * End Main Functions
-
- * Begin Events
-
- * 
-
- */
+}
