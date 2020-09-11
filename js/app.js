@@ -36,7 +36,7 @@ for (var navLink of navLinks) {
 
   navLink.href = "#" + dtNavArray[n + 1];
   
-  navLink.addEventListener("click", function () {
+  navLink.addEventListener("click", function(){
     let div = document.getElementById(`${this.textContent}`);
 
     // Set sections as active
@@ -74,8 +74,9 @@ let ShowSideNav=()=> {
 bu.addEventListener("click", ShowSideNav);
 
 /* -- Add go-to top button at the end of the page -- */
-window.onscroll = function(ev) {
+window.onscroll = (ev)=> {
     topButton.style.opacity=0;
+    
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
    // you're at the bottom of the page 
       topButton.style.opacity=1;
