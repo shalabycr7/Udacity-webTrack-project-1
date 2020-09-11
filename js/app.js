@@ -40,20 +40,14 @@ for (var navLink of navLinks) {
     let div = document.getElementById(`${this.textContent}`);
 
     // Set sections as active
-
     for (var i = 0; i < sections.length; i++) {
       sections[i].classList.remove("your-active-class");
     }
-
-    // Add class 'active' to section when near top of viewport
-
     div.classList.add("your-active-class");
-
    // ShowSideNav();
-    /*--Scroll to anchor ID using scrollTO event--*/
-   // div.scrollIntoView({ behavior: "smooth" });
+  
+  // div.scrollIntoView({ behavior: "smooth" });
   });
-
   n++;
 }
 /* --- Style Navigation Menu --- */
@@ -80,6 +74,7 @@ window.onscroll = (ev)=> {
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
    // you're at the bottom of the page 
       topButton.style.opacity=1;
+        /*--Scroll to top page using scrollTO event--*/
       topButton.addEventListener('click',()=>{
          scrollTo({top:0,left:0,behavior:'smooth'});
 })
