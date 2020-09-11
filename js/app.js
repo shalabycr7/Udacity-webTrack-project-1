@@ -8,6 +8,7 @@ let n = 0;
 let dtNavValue = "";
 let nv = document.querySelector(".navbar__menu");
 let bu = document.querySelector("#nav-drawer");
+let nvHeight=nv.clientHeight;
 
 // build the nav
 for (let sec of sections) {
@@ -47,9 +48,9 @@ for (var navLink of navLinks) {
 
     div.classList.add("your-active-class");
 
-    // show();
-    // Scroll to anchor ID using scrollTO event
-    div.scrollIntoView({ behavior: "smooth" });
+    //show();
+    /*--Scroll to anchor ID using scrollTO event--*/
+   // div.scrollIntoView({ behavior: "smooth" });
   });
 
   n++;
@@ -58,20 +59,24 @@ for (var navLink of navLinks) {
 /* --- Build Navigation Menu --- */
 bu.addEventListener("click", show);
 function show() {
+   
   if (nv.style.display == "block") {
     bu.style.top = "10px";
     nv.style.display = "none";
     bu.style.color = "white";
     bu.style.transform = "rotate(0deg)";
     bu.style.border = "1px solid white";
-    bu.style.opacity = "0.9";
+    bu.style.opacity = "0.95";
+    
   } else {
+     
     nv.style.display = "block";
-    bu.style.top = "55px";
+    bu.style.top = `${nv.clientHeight+10}px`;
     bu.style.transform = "rotate(90deg)";
-    bu.style.opacity = "0.72";
+    bu.style.opacity = "0.85";
   }
 }
+
 /**
 
  * End Main Functions
