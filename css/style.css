@@ -127,7 +127,7 @@ section {
 /* Footer Styles */
 .page__footer {
   background: #000;
-  padding: 3em;
+  padding: 2.5em;
   color: #fff;
 }
 .page__footer p {
@@ -264,8 +264,15 @@ section.your-active-class .landing__container::after {
 @media only screen and (max-width: 500px) {
   .navbar__menu li {
     display: block;
+    padding-bottom: 5px;
   }
   #nav-drawer {
     font-size: 1.8em;
   }
+  /* --Handling overflow if there are many sections-- */
+  .navbar__menu {
+  overflow-x: hidden;
+  overflow-y: auto;
+   max-height: 20vh;
+}
 }
