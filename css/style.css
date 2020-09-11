@@ -105,7 +105,22 @@ section {
   color: white;
   margin-left: 10px;
 }
-
+#top-bu {
+  position: fixed;
+ display: grid;
+ place-items: center;
+  font-size: 1.5em;
+  color: rgba(0, 0, 0, 0.7);
+  right: 10px;
+  z-index: 3;
+  bottom: 60px;
+  padding: 8px 13px;
+  background-color: rgba(212, 208, 199, 0.31);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  display: none;
+}
 /* Footer Styles */
 .page__footer {
   background: #000;

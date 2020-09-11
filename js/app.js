@@ -8,6 +8,7 @@ let n = 0;
 let dtNavValue = "";
 let nv = document.querySelector(".navbar__menu");
 let bu = document.querySelector("#nav-drawer");
+let topButton=document.getElementById('top-bu');
 
 // build the nav
 for (let sec of sections) {
@@ -74,6 +75,17 @@ function show() {
     bu.style.opacity = "0.85";
   }
 }
+
+window.onscroll = function(ev) {
+    topButton.style.display='none';
+    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+   // you're at the bottom of the page 
+      topButton.style.display='block';
+      topButton.addEventListener('click',function(){
+         scrollTo({top:0,left:0,behavior:'smooth'});
+      })
+}
+};
 
 /**
 
