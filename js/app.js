@@ -49,18 +49,15 @@ for (var navLink of navLinks) {
 
     div.classList.add("your-active-class");
 
-    //show();
+   // ShowSideNav();
     /*--Scroll to anchor ID using scrollTO event--*/
    // div.scrollIntoView({ behavior: "smooth" });
   });
 
   n++;
 }
-
 /* --- Style Navigation Menu --- */
-bu.addEventListener("click", show);
-function show() {
-   
+let ShowSideNav=()=> {
   if (nv.style.display == "block") {
    bu.style.top = "10px";
     nv.style.display = "none";
@@ -68,13 +65,14 @@ function show() {
     bu.style.opacity = "0.95";
     
   } else {
-     
     nv.style.display = "block";
     bu.style.top = `${nv.clientHeight+10}px`;
     bu.style.transform = "rotate(90deg)";
     bu.style.opacity = "0.85";
   }
 }
+bu.addEventListener("click", ShowSideNav);
+
 /* -- Add go-to top button at the end of the page -- */
 window.onscroll = function(ev) {
     topButton.style.opacity=0;
