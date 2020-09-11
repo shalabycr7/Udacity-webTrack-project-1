@@ -69,10 +69,10 @@ section {
   transition: ease 0.3s all;
 }
 .navbar__menu .menu__link:active {
-  color: blue;
+  
+  color: #25D366;
   transition: ease 0.3s all;
 }
-
 .menu__link:first-letter {
   text-transform: capitalize;
 }

@@ -8,7 +8,6 @@ let n = 0;
 let dtNavValue = "";
 let nv = document.querySelector(".navbar__menu");
 let bu = document.querySelector("#nav-drawer");
-let nvHeight=nv.clientHeight;
 
 // build the nav
 for (let sec of sections) {
@@ -35,6 +34,7 @@ for (var navLink of navLinks) {
   // Scroll to section on link click
 
   navLink.href = "#" + dtNavArray[n + 1];
+  
   navLink.addEventListener("click", function () {
     let div = document.getElementById(`${this.textContent}`);
 
@@ -56,7 +56,7 @@ for (var navLink of navLinks) {
   n++;
 }
 
-/* --- Build Navigation Menu --- */
+/* --- Style Navigation Menu --- */
 bu.addEventListener("click", show);
 function show() {
    
