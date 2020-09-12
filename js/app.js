@@ -5,7 +5,7 @@ let n = 0;
 let dtNavValue = "";
 let nv = document.querySelector(".navbar__menu");
 let bu = document.querySelector("#nav-drawer");
-let topButton=document.getElementById('top-bu');
+let topButton = document.getElementById("top-bu");
 
 // build the nav
 for (let sec of sections) {
@@ -21,10 +21,10 @@ let dtNavArray = dtNavValue.split(" ");
 let navLinks = document.querySelectorAll(" nav li a");
 for (var navLink of navLinks) {
   navLink.textContent = dtNavArray[n + 1];
-  
+
   // Add anchor links
   navLink.href = "#" + dtNavArray[n + 1];
-  navLink.addEventListener("click", function(){
+  navLink.addEventListener("click", function () {
     let div = document.getElementById(`${this.textContent}`);
 
     // Set/Remove active sections
@@ -32,56 +32,55 @@ for (var navLink of navLinks) {
       sections[i].classList.remove("your-active-class");
     }
     div.classList.add("your-active-class");
-    
+
     /* -close navigation menu after clicking a section-
-   **ShowSideNav();
-   */
+     **ShowSideNav();
+     */
+    ShowSideNav();
   });
   n++;
 }
 /* -- Style Navigation Menu -- */
-let ShowSideNav=()=> {
+let ShowSideNav = () => {
   if (nv.style.display == "block") {
-   bu.style.top = "10px";
+    bu.style.top = "10px";
     nv.style.display = "none";
     bu.style.transform = "rotate(0deg)";
     bu.style.opacity = "0.95";
-    
   } else {
     nv.style.display = "block";
-    bu.style.top = `${nv.clientHeight+10}px`;
+    bu.style.top = `${nv.clientHeight + 10}px`;
     bu.style.transform = "rotate(90deg)";
     bu.style.opacity = "0.85";
   }
-}
+};
 bu.addEventListener("click", ShowSideNav);
 
 /* -- Add go-to top button at the end of the page -- */
-window.onscroll = ()=> {
-    topButton.style.opacity=0;
-    if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
-   //the bottom of the page 
-      topButton.style.opacity=1;
-        /*--Scroll to top page using scrollTO event--*/
-      topButton.addEventListener('click',()=>{
-         scrollTo({top:0,left:0,behavior:'smooth'});
-})
-}
-var allSections=document.querySelectorAll('section');
-for (var element of allSections){
-   var position = element.getBoundingClientRect();
-   // checking whether fully visible 
-if(position.top >= 0 && position.bottom <= window.innerHeight) {
-  /* console.log('Element is fully visible in screen'); */
-for (var i = 0; i < sections.length; i++) {
-      sections[i].classList.remove("your-active-class");
+window.onscroll = () => {
+  topButton.style.opacity = 0;
+  if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+    //the bottom of the page
+    topButton.style.opacity = 1;
+    /*--Scroll to top page using scrollTO event--*/
+    topButton.addEventListener("click", () => {
+      scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    });
+  }
+  var allSections = document.querySelectorAll("section");
+  for (var element of allSections) {
+    var position = element.getBoundingClientRect();
+    // checking whether fully visible
+    if (position.top >= 0 && position.bottom <= window.innerHeight) {
+      /* console.log('Element is fully visible in screen'); */
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].classList.remove("your-active-class");
+      }
+      element.classList.add("your-active-class");
     }
-element.classList.add('your-active-class');
-} 	
-// checking for partial visibility 
-/*if(position.top < window.innerHeight && position.bottom >= 0) {
-   console.log('Element is partially visible in screen');
-}*/
-}
-}
-
+    // checking for partial visibility
+    if (position.top < window.innerHeight && position.bottom >= 0) {
+      //  console.log('Element is partially visible in screen');
+    }
+  }
+};

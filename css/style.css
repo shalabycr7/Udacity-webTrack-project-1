@@ -1,6 +1,6 @@
 /* --Handling smooth transition to anchor links-- */
-html{
-   scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 /* ---- Base Rules ---- */
@@ -74,8 +74,7 @@ section {
   transition: ease 0.3s all;
 }
 .navbar__menu .menu__link:active {
-  
-  color: #25D366;
+  color: #25d366;
   transition: ease 0.3s all;
 }
 .menu__link:first-letter {
@@ -115,14 +114,14 @@ section {
   position: fixed;
   width: 45px;
   height: 45px;
- display: grid;
- place-items: center;
+  display: grid;
+  place-items: center;
   font-size: 1.95em;
   color: rgba(0, 0, 0, 0.7);
   right: 10px;
   z-index: 3;
   bottom: 40px;
- /* padding: 10px 15px;*/
+  /* padding: 10px 15px;*/
   background-color: rgba(212, 208, 199, 0.31);
   border: none;
   outline: none;
@@ -278,8 +277,8 @@ section.your-active-class .landing__container::after {
   }
   /* --Handling overflow if there are many sections-- */
   .navbar__menu {
-  overflow-x: hidden;
-  overflow-y: auto;
-   max-height: 20vh;
-}
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 20vh;
+  }
 }
