@@ -7,6 +7,12 @@ let nv = document.querySelector(".navbar__menu");
 let bu = document.querySelector("#nav-drawer");
 let topButton = document.getElementById("top-bu");
 
+// Helper functions
+function removeClass(element){
+ for (let i = 0; i < element.length; i++) {
+    element[i].classList.remove("your-active-class");
+ }
+}
 // build the nav
 for (let sec of sections) {
   dtNavValue += ` ${sec.getAttribute("data-nav")}`;
@@ -15,6 +21,15 @@ for (let sec of sections) {
   link.classList.add("menu__link");
   createdLiElements.appendChild(link);
   navUl.appendChild(createdLiElements);
+  
+  var observer = new IntersectionObserver(function(entries) {
+     if (entries[0].isIntersecting === true) 
+   removeClass(sections);
+  sec.classList.add('your-active-class');
+  /* --Using a threshold for the section portion  displayed in the viewport-- */
+  }, { threshold: [0.7] });
+  observer.observe(sec);
+  
 }
 
 let dtNavArray = dtNavValue.split(" ");
@@ -28,19 +43,15 @@ for (var navLink of navLinks) {
     let div = document.getElementById(`${this.textContent}`);
 
     // Set/Remove active sections
-    for (var i = 0; i < sections.length; i++) {
-      sections[i].classList.remove("your-active-class");
-    }
+    removeClass(sections);
     div.classList.add("your-active-class");
 
-    /* -close navigation menu after clicking a section-
-     **ShowSideNav();
-     */
+    /* -close navigation menu after clicking a section-- */
     ShowSideNav();
   });
   n++;
 }
-/* -- Style Navigation Menu -- */
+// Show Navigation Menu
 let ShowSideNav = () => {
   if (nv.style.display == "block") {
     bu.style.top = "10px";
@@ -67,20 +78,5 @@ window.onscroll = () => {
       scrollTo({ top: 0, left: 0, behavior: "smooth" });
     });
   }
-  var allSections = document.querySelectorAll("section");
-  for (var element of allSections) {
-    var position = element.getBoundingClientRect();
-    // checking whether fully visible
-    if (position.top >= 0 && position.bottom <= window.innerHeight) {
-      /* console.log('Element is fully visible in screen'); */
-      for (var i = 0; i < sections.length; i++) {
-        sections[i].classList.remove("your-active-class");
-      }
-      element.classList.add("your-active-class");
-    }
-    // checking for partial visibility
-    if (position.top < window.innerHeight && position.bottom >= 0) {
-      //  console.log('Element is partially visible in screen');
-    }
-  }
+  
 };

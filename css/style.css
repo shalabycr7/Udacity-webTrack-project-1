@@ -44,6 +44,8 @@ main {
 section {
   position: relative;
   min-height: 95vh;
+  margin-bottom:2em;
+  
 }
 
 /* ---- Module Rules ---- */
