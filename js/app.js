@@ -1,6 +1,6 @@
 // Define Global Variables
 let navUl = document.getElementById("navbar__list");
-let sections = document.getElementsByTagName("section");
+let sections = document.querySelectorAll("section");
 let n = 0;
 let dtNavValue = "";
 let nv = document.querySelector(".navbar__menu");
@@ -22,13 +22,7 @@ for (let sec of sections) {
   createdLiElements.appendChild(link);
   navUl.appendChild(createdLiElements);
   
-  var observer = new IntersectionObserver(function(entries) {
-     if (entries[0].isIntersecting === true) 
-   removeClass(sections);
-  sec.classList.add('your-active-class');
-  /* --Using a threshold for the section portion  displayed in the viewport-- */
-  }, { threshold: [0.7] });
-  observer.observe(sec);
+  
   
 }
 
@@ -80,3 +74,18 @@ window.onscroll = () => {
   }
   
 };
+/* --Add an active state to sections when scrolling-- */
+var observer = new IntersectionObserver(function(entries) {
+   entries.forEach(entry=>{
+      // Checking if intersecting or not
+      if (!entry.isIntersecting) {
+         return;
+      }
+      removeClass(sections);
+      entry.target.classList.add('your-active-class');
+   })
+  /* --Using a threshold for the section portion  displayed in the viewport-- */
+  }, { threshold: [0.7] });
+ sections.forEach(sections=>{
+      observer.observe(sections);
+ })
