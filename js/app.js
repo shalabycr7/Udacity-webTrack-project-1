@@ -6,7 +6,6 @@ let dtNavValue = "";
 let nv = document.querySelector(".navbar__menu");
 const bu = document.querySelector("#nav-drawer");
 const topButton = document.getElementById("top-bu");
-
 // Helper functions
 function removeClass(element, className) {
   for (let i = 0; i < element.length; i++) {
