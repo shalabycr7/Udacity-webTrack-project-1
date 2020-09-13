@@ -8,9 +8,9 @@ const bu = document.querySelector("#nav-drawer");
 const topButton = document.getElementById("top-bu");
 
 // Helper functions
-function removeClass(element){
+function removeClass(element,className){
  for (let i = 0; i < element.length; i++) {
-    element[i].classList.remove("your-active-class");
+    element[i].classList.remove(className);
  }
 }
 // build the nav
@@ -35,7 +35,7 @@ for (let navLink of navLinks) {
     let div = document.getElementById(`${this.textContent}`);
 
     // Set/Remove active sections
-    removeClass(sections);
+    removeClass(sections,'your-active-class');
     div.classList.add("your-active-class");
 
     /* -close navigation menu after clicking a section-- */
@@ -79,11 +79,18 @@ var observer = new IntersectionObserver(function(entries) {
       if (!entry.isIntersecting) {
          return;
       }
-      removeClass(sections);
+      removeClass(sections,'your-active-class');
       entry.target.classList.add('your-active-class');
+           /* --Add an active state to links depending on the section visible in the viewport-- */
+     let viewedSecLink=document.querySelector(`[href="#${entry.target.id}"]`);
+      const allLinks=document.querySelectorAll('li a');
+      removeClass(allLinks,'activeS');
+      viewedSecLink.classList.add('activeS');
    })
   /* --Using a threshold for the section portion  displayed in the viewport-- */
   }, { threshold: [0.7] });
  sections.forEach(sections=>{
       observer.observe(sections);
  })
+ 
+ 

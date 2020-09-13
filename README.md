@@ -6,6 +6,7 @@ Udacity's first project for the web professional track course (Landing Page) aim
 ## ChangLog
 
 * Some minor changes.
+* Add an active state to your navigation items when a section is in the viewport.
 * Handling some overflow issues when there are more than 3 sections and make it scrollable.
 * Add go-to the top of page button at the end of the page.
 * Smooth scrolling among sections.
