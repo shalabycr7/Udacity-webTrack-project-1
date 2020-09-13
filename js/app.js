@@ -1,11 +1,11 @@
 // Define Global Variables
-let navUl = document.getElementById("navbar__list");
-let sections = document.querySelectorAll("section");
+const navUl = document.getElementById("navbar__list");
+const sections = document.querySelectorAll("section");
 let n = 0;
 let dtNavValue = "";
 let nv = document.querySelector(".navbar__menu");
-let bu = document.querySelector("#nav-drawer");
-let topButton = document.getElementById("top-bu");
+const bu = document.querySelector("#nav-drawer");
+const topButton = document.getElementById("top-bu");
 
 // Helper functions
 function removeClass(element){
@@ -14,24 +14,22 @@ function removeClass(element){
  }
 }
 // build the nav
+let frag=document.createDocumentFragment();
 for (let sec of sections) {
   dtNavValue += ` ${sec.getAttribute("data-nav")}`;
   let createdLiElements = document.createElement("li");
   let link = document.createElement("a");
   link.classList.add("menu__link");
   createdLiElements.appendChild(link);
-  navUl.appendChild(createdLiElements);
-  
-  
-  
+  frag.appendChild(createdLiElements);
 }
-
+navUl.appendChild(frag);
 let dtNavArray = dtNavValue.split(" ");
 let navLinks = document.querySelectorAll(" nav li a");
-for (var navLink of navLinks) {
+for (let navLink of navLinks) {
   navLink.textContent = dtNavArray[n + 1];
 
-  // Add anchor links
+  // Add anchor link's href attribute
   navLink.href = "#" + dtNavArray[n + 1];
   navLink.addEventListener("click", function () {
     let div = document.getElementById(`${this.textContent}`);
