@@ -1,6 +1,6 @@
 ## Description
 
-Udacity's first project for the web professional track course (Landing Page).
+Udacity's first project for the web professional track course (Landing Page) aimed to **create a dynamic navigation menu.**
 
 
 ## ChangLog
@@ -16,4 +16,4 @@ Udacity's first project for the web professional track course (Landing Page).
 
 #### External resources,
 
-* Thanks to [UsfulAngel.com](https://usefulangle.com/post/113/javascript-detecting-element-visible-during-scroll) for clearifing **the concept of Intersection Observer API.**,
+* Thanks to [UsfulAngel.com](https://usefulangle.com/post/113/javascript-detecting-element-visible-during-scroll) for clearifing **the concept of Intersection Observer API.**
