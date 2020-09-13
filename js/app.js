@@ -30,13 +30,14 @@ for (let navLink of navLinks) {
 
   // Add anchor link's href attribute
   navLink.href = "#" + dtNavArray[n + 1];
-  navLink.addEventListener("click", function () {
+  navLink.addEventListener("click", function (e) {
+     e.preventDefault();
     let div = document.getElementById(`${this.textContent}`);
-
     // Set/Remove active sections
     removeClass(sections, "your-active-class");
     div.classList.add("your-active-class");
 
+div.scrollIntoView({behavior:'smooth'});
     /* -close navigation menu after clicking a section-- */
     ShowSideNav();
   });
