@@ -31,13 +31,15 @@ for (let navLink of navLinks) {
   // Add anchor link's href attribute
   navLink.href = "#" + dtNavArray[n + 1];
   navLink.addEventListener("click", function (e) {
-     e.preventDefault();
+    e.preventDefault();
     let div = document.getElementById(`${this.textContent}`);
     // Set/Remove active sections
     removeClass(sections, "your-active-class");
     div.classList.add("your-active-class");
 
-div.scrollIntoView({behavior:'smooth'});
+    div.scrollIntoView({
+      behavior: "smooth",
+    });
     /* -close navigation menu after clicking a section-- */
     ShowSideNav();
   });
@@ -67,7 +69,11 @@ window.onscroll = () => {
     topButton.style.opacity = 1;
     /*--Scroll to top page using scrollTO event--*/
     topButton.addEventListener("click", () => {
-      scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
     });
   }
 };
@@ -91,7 +97,9 @@ var observer = new IntersectionObserver(
     });
     /* --Using a threshold for the section portion  displayed in the viewport-- */
   },
-  { threshold: [0.5] }
+  {
+    threshold: [0.5],
+  }
 );
 sections.forEach((sections) => {
   observer.observe(sections);
