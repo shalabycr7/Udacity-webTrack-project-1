@@ -8,13 +8,13 @@ const bu = document.querySelector("#nav-drawer");
 const topButton = document.getElementById("top-bu");
 
 // Helper functions
-function removeClass(element,className){
- for (let i = 0; i < element.length; i++) {
+function removeClass(element, className) {
+  for (let i = 0; i < element.length; i++) {
     element[i].classList.remove(className);
- }
+  }
 }
 // build the nav
-let frag=document.createDocumentFragment();
+let frag = document.createDocumentFragment();
 for (let sec of sections) {
   dtNavValue += ` ${sec.getAttribute("data-nav")}`;
   let createdLiElements = document.createElement("li");
@@ -35,7 +35,7 @@ for (let navLink of navLinks) {
     let div = document.getElementById(`${this.textContent}`);
 
     // Set/Remove active sections
-    removeClass(sections,'your-active-class');
+    removeClass(sections, "your-active-class");
     div.classList.add("your-active-class");
 
     /* -close navigation menu after clicking a section-- */
@@ -70,27 +70,29 @@ window.onscroll = () => {
       scrollTo({ top: 0, left: 0, behavior: "smooth" });
     });
   }
-  
 };
 /* --Add an active state to sections when scrolling-- */
-var observer = new IntersectionObserver(function(entries) {
-   entries.forEach(entry=>{
+var observer = new IntersectionObserver(
+  function (entries) {
+    entries.forEach((entry) => {
       // Checking if intersecting or not
       if (!entry.isIntersecting) {
-         return;
+        return;
       }
-      removeClass(sections,'your-active-class');
-      entry.target.classList.add('your-active-class');
-           /* --Add an active state to links depending on the section visible in the viewport-- */
-     let viewedSecLink=document.querySelector(`[href="#${entry.target.id}"]`);
-      const allLinks=document.querySelectorAll('li a');
-      removeClass(allLinks,'activeS');
-      viewedSecLink.classList.add('activeS');
-   })
-  /* --Using a threshold for the section portion  displayed in the viewport-- */
-  }, { threshold: [0.7] });
- sections.forEach(sections=>{
-      observer.observe(sections);
- })
- 
- 
+      removeClass(sections, "your-active-class");
+      entry.target.classList.add("your-active-class");
+      /* --Add an active state to links depending on the section visible in the viewport-- */
+      let viewedSecLink = document.querySelector(
+        `[href="#${entry.target.id}"]`
+      );
+      const allLinks = document.querySelectorAll("li a");
+      removeClass(allLinks, "activeS");
+      viewedSecLink.classList.add("activeS");
+    });
+    /* --Using a threshold for the section portion  displayed in the viewport-- */
+  },
+  { threshold: [0.5] }
+);
+sections.forEach((sections) => {
+  observer.observe(sections);
+});
